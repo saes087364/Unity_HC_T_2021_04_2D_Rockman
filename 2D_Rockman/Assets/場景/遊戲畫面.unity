@@ -8896,6 +8896,7 @@ GameObject:
   - component: {fileID: 1588096769}
   - component: {fileID: 1588096773}
   - component: {fileID: 1588096772}
+  - component: {fileID: 1588096774}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -9023,6 +9024,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1588096774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588096768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9fc6e680016ffd49a681d08761dfc97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10.5
+  jump: 100
+  hp: 100
+  isGrounded: 0
+  bullet: {fileID: 0}
+  bulletPoint: {fileID: 0}
+  bulletSpeed: 0
+  bulletSound: {fileID: 0}
 --- !u!1 &1653137540
 GameObject:
   m_ObjectHideFlags: 0
