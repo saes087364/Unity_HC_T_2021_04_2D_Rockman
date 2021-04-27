@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 
     //子彈(遊戲物件)
     [Header("Bullet"), Tooltip("Bullet")]
-    public GameObject bullet = new GameObject();
+    public GameObject bullet;
 
     //元件 子彈生成點(Transform)
     [Header("Bullet Transform"), Tooltip("Bullet transform")]
