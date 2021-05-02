@@ -11,6 +11,8 @@ public class Car : MonoBehaviour
      * 註解
      */
 
+    #region 欄位
+    
     //[欄位名稱(屬性內容)]
     //[Header(""), ToolTip(""), Range(,)]
     [Header("C.C."), Tooltip("車的C.C."), Range(1000, 5000)]
@@ -50,4 +52,27 @@ public class Car : MonoBehaviour
     //名稱去空格
     public Transform tra;
     public SpriteRenderer spr;
+
+    #endregion
+
+    #region 事件
+
+    //事件：特定時間點會被執行的function
+    //UNITY提供的事件：Start、Update
+
+    //開始執行時間點與次數
+    //ex：數值初始化、金幣量與生命值
+    private void Start()
+    {
+        print("START");
+    }
+
+    //更新事件執行時間點與次數：每秒60FPS
+    //ex：監聽玩家輸入與物件持續行為
+    private void Update()
+    {
+        print("UPDATE");
+    }
+
+    #endregion
 }
