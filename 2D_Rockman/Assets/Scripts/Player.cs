@@ -43,4 +43,58 @@ public class Player : MonoBehaviour
     //元件 動畫控制器 (Animator)
     private Animator ani;
 
+    #region 方法
+
+    /// <summary>
+    /// 動
+    /// </summary>
+    private void Move()
+    {
+
+    }
+
+    /// <summary>
+    /// 跳
+    /// </summary>
+    private void Jump()
+    {
+
+    }
+
+    /// <summary>
+    /// 開火
+    /// </summary>
+    private void Fire()
+    {
+
+    }
+
+    /// <summary>
+    /// 受傷
+    /// </summary>
+    /// <param name="damage"></param>
+    private void Hurt(float damage)
+    {
+
+    }
+
+    /// <summary>
+    /// 死亡
+    /// </summary>
+    /// <returns></returns>
+    private bool Dead()
+    {
+        return false;
+    }
+
+    /// <summary>
+    /// 拾取物品
+    /// </summary>
+    /// <param name="name"></param>
+    private void Item(string name)
+    {
+
+    }
+
+    #endregion
 }

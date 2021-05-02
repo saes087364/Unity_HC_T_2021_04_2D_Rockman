@@ -12,7 +12,7 @@ public class Car : MonoBehaviour
      */
 
     #region 欄位
-    
+
     //[欄位名稱(屬性內容)]
     //[Header(""), ToolTip(""), Range(,)]
     [Header("C.C."), Tooltip("車的C.C."), Range(1000, 5000)]
@@ -48,7 +48,7 @@ public class Car : MonoBehaviour
     //遊戲物件 GameObject
     //遊戲元件 Component
     public GameObject obj01;
-    
+
     //名稱去空格
     public Transform tra;
     public SpriteRenderer spr;
@@ -57,7 +57,15 @@ public class Car : MonoBehaviour
 
     #region 事件
 
-    //事件：特定時間點會被執行的function
+    public int num = 1;
+    public bool sure = false;
+    public string prop = "紅色藥水";
+
+    private readonly int a = 10;
+    private readonly int b = 5;
+    private readonly string str;
+
+    //Event：特定時間點會被執行的function
     //UNITY提供的事件：Start、Update
 
     //開始執行時間點與次數
@@ -65,6 +73,21 @@ public class Car : MonoBehaviour
     private void Start()
     {
         print("START");
+        print(num);
+        print(sure);
+        sure = true;
+        print(sure);
+        print(prop);
+        prop = "藍色藥水";
+        print(prop);
+        Attack();
+        print(Cal());
+        print(Cal(a, b));
+        print(Cal(a, b, str));
+        print(Cal(a, b, "Not Default"));
+        print(Cal(a, b, z: "Not Default"));
+        print(Cal(a, b, "Not Default", "Not Default"));
+        print(BMI(1.79f, 74));
     }
 
     //更新事件執行時間點與次數：每秒60FPS
@@ -72,6 +95,76 @@ public class Car : MonoBehaviour
     private void Update()
     {
         print("UPDATE");
+    }
+
+    #endregion
+
+    #region 方法
+
+    //Method(Unity使用)、Function：保存複雜程式或演算法的程式區塊
+    /// <summary>
+    /// 攻擊用Method
+    /// </summary>
+    private void Attack()
+    {
+        print("ATTACK!!");
+    }
+
+    /// <summary>
+    /// 回傳計算過程
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <returns>sum</returns>
+    private int Cal(int x = 0, int y = 10)
+    {
+        int sum = x - y;
+
+        return sum;
+    }
+
+    /// <summary>
+    /// 回傳計算過程
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <param name="z"></param>
+    /// <returns>sum</returns>
+    private string Cal(int x, int y, string z = "Default")
+    {
+        int sum = x + y;
+
+        return z + sum;
+    }
+
+    /// <summary>
+    /// 回傳計算過程
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <param name="z"></param>
+    /// <param name="w"></param>
+    /// <returns>sum</returns>
+    private string Cal(int x, int y, string z, string w = "Default")
+    {
+        int sum = x + y;
+
+        return z + sum + w;
+    }
+
+    /// <summary>
+    /// BMI計算
+    /// </summary>
+    /// <param name="height"></param>
+    /// <param name="weight"></param>
+    /// <returns>bmi</returns>
+    private float BMI(float height, float weight)
+    {
+        float bmi = 0.00f;
+
+        bmi = weight / (height * height);
+
+        return bmi;
     }
 
     #endregion
