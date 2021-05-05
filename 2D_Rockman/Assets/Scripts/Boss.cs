@@ -23,7 +23,7 @@ public class Boss : MonoBehaviour
     public float prob = 1.0000f;
 
     //掉落音效(AudioClip)
-    [Header("Falling Audio"), Tooltip("Falling audio")]
+    [Header("Falling Sound"), Tooltip("Falling sound")]
     public AudioClip fallingSound;
 
     //元件 音效來源 (AudioSource)
@@ -34,5 +34,4 @@ public class Boss : MonoBehaviour
 
     //元件 動畫控制器 (Animator)
     private Animator ani;
-
 }
