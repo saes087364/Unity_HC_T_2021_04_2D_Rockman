@@ -1,5 +1,5 @@
 
-=== Sun May  2 10:51:19 2021
+=== Sun May  9 10:09:07 2021
 
 Packages were changed.
 Update Mode: resetToDefaultDependencies
@@ -41,5 +41,5 @@ The following packages were added:
   com.unity.modules.xr@1.0.0
   com.unity.test-framework@1.1.14
   com.unity.textmeshpro@2.0.1
-  com.unity.timeline@1.2.15
+  com.unity.timeline@1.2.14
   com.unity.ugui@1.0.0

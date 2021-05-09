@@ -2,20 +2,22 @@
 
 public class Player : MonoBehaviour
 {
+    #region 全域變數
+
     //移動速度
     [Header("Speed"), Tooltip("Speed"), Range(0, 1000)]
-    public float speed = 10.5f;
+    public float speed = 1000.0f;
 
     //跳躍高度
     [Header("Jump"), Tooltip("Jump high"), Range(0, 3000)]
-    public int jump = 100;
+    public int jump = 500;
 
     //血量
     [Header("Health"), Tooltip("Health point"), Range(0, 200)]
     public float hp = 100;
 
     //是否在地板上
-    [Header("Ground"), Tooltip("It is on ground?")]
+    [Header("Ground"), Tooltip("Is it on ground?")]
     public bool isGrounded = false;
 
     //子彈(遊戲物件)
@@ -43,6 +45,38 @@ public class Player : MonoBehaviour
     //元件 動畫控制器 (Animator)
     private Animator ani;
 
+    public Vector3 offset = new Vector3(-0.20f, -0.88f, 0.00f);
+    public float radius = 0.05f;
+
+    #endregion
+
+    #region 事件
+
+    private void Start()
+    {
+        //利用程式取得元件
+        //傳回元件 取得元件<元件名稱>() - <泛型>
+        rigid = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        Move();
+        Jump();
+    }
+
+    //繪製圖示 - 輔助編輯時的圖形線條
+    private void OnDrawGizmos()
+    {
+        //1.指定顏色
+        Gizmos.color = new Color(1, 0, 0, 0.5f);
+
+        //2.繪製圖形
+        Gizmos.DrawSphere(transform.position + offset, radius);
+    }
+
+    #endregion
+
     #region 方法
 
     /// <summary>
@@ -50,7 +84,11 @@ public class Player : MonoBehaviour
     /// </summary>
     private void Move()
     {
+        float h = Input.GetAxis("Horizontal");
 
+        print("X: " + h);
+        //速度*一幀的時間(60fps即1/60s)
+        rigid.velocity = new Vector2(h * speed * Time.deltaTime, rigid.velocity.y);
     }
 
     /// <summary>
@@ -58,7 +96,10 @@ public class Player : MonoBehaviour
     /// </summary>
     private void Jump()
     {
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rigid.AddForce(Vector2.up * jump);
+        }
     }
 
     /// <summary>
